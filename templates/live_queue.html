@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Live Queue</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+
+        body{
+            background:#0f172a;
+            color:white;
+            font-family:Arial;
+            padding:40px;
+        }
+
+        .current-token{
+            background:linear-gradient(to right, #2563eb, #1e3a8a);
+            padding:40px;
+            border-radius:20px;
+            text-align:center;
+            margin-bottom:40px;
+        }
+
+        .current-token h1{
+            font-size:60px;
+            font-weight:bold;
+        }
+
+        .table-box{
+            background:white;
+            color:black;
+            padding:30px;
+            border-radius:20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="current-token">
+
+        <h3>Currently Serving</h3>
+
+        {% if current_token %}
+
+            <h1>{{ current_token.token_number }}</h1>
+
+        {% else %}
+
+            <h1>No Active Queue</h1>
+
+        {% endif %}
+
+    </div>
+
+    <div class="table-box">
+
+        <h3>Waiting Queue</h3>
+
+        <br>
+
+        <table class="table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Token Number</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for token in waiting_tokens %}
+
+                <tr>
+
+                    <td>{{ token.token_number }}</td>
+
+                    <td>{{ token.status }}</td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Live Queue</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+
+        body{
+            background:#0f172a;
+            color:white;
+            font-family:Arial;
+            padding:40px;
+        }
+
+        .current-token{
+            background:linear-gradient(to right, #2563eb, #1e3a8a);
+            padding:40px;
+            border-radius:20px;
+            text-align:center;
+            margin-bottom:40px;
+        }
+
+        .current-token h1{
+            font-size:60px;
+            font-weight:bold;
+        }
+
+        .table-box{
+            background:white;
+            color:black;
+            padding:30px;
+            border-radius:20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="current-token">
+
+        <h3>Currently Serving</h3>
+
+        {% if current_token %}
+
+            <h1>{{ current_token.token_number }}</h1>
+
+        {% else %}
+
+            <h1>No Active Queue</h1>
+
+        {% endif %}
+
+    </div>
+
+    <div class="table-box">
+
+        <h3>Waiting Queue</h3>
+
+        <br>
+
+        <table class="table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Token Number</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for token in waiting_tokens %}
+
+                <tr>
+
+                    <td>{{ token.token_number }}</td>
+
+                    <td>{{ token.status }}</td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>
